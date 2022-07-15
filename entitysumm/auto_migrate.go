@@ -27,7 +27,7 @@ func AutoMigrate(db *gorm.DB) {
 		panic("Could not migrate SumAreaAssignment")
 	}
 
-	err = db.AutoMigrate(&Sensor{})
+	err = db.AutoMigrate(&Sensor{}, &SumValues{})
 
 	if err != nil {
 		panic("Could not migrate Sensor")
